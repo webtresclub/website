@@ -108,6 +108,31 @@
   margin-left: 0.5rem;
 }
 
+.wrapperButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+}
+
+.blueButton {
+  display: inline-block;
+  font-family: Whitney, "Open Sans", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 45px;
+  width: 250px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.blueButton {
+  background-color: #7289da;
+  border: 2px solid #7289da;
+  color: #fff;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
