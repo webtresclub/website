@@ -19,6 +19,7 @@ export default function Home() {
         </p>
         <h1 className={styles.title}>
           Bienvenido a <a href="https://discord.gg/eegRCDmwbM">WebtrES</a>
+          <Image className="uwuloscopio" src="/UwUloscopio_big.gif" alt="UwUloscopio" width={90} height={75}/>
         </h1>
 
         <p className={styles.description}>
