@@ -8,23 +8,37 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>WebtrES</title>
-        <meta name="description" content="Sitio Eb de la comunidad WebtrES" />
+        <meta name="description" content="Sitio Web de la comunidad WebtrES" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <ThemeChanger />
         <p className={styles.description}>
-          Desarrollo && Web3
+          La comunidad más diversa sobre Desarrollo && Web3
         </p>
         <h1 className={styles.title}>
-          Bienvenido a <a href="https://discord.gg/eegRCDmwbM">WebtrES</a>
+          Bienvenido a <a href="https://discord.gg/eegRCDmwbM">WebtrES</a>.
         </h1>
 
         <p className={styles.description}>
+          ¿Quienes somos? <br/>
           Somos una comunidad hispanohablante apasionada por el desarrollo Web 3.0
-          integrada por desarrolladores de diferentes ramas, todos contibuyendo a que el
-          aprendizaje sea mas ameno y divertido en conjunto
+          integrada por devs de diferentes ámbitos, todos contibuyendo a que el
+          aprendizaje sea mas ameno y divertido en conjunto, dentro de nuestra comunidad encontrarás
+          diferentes personajes divertidos y extravagantes, cada uno con algo particular que lo distingue.
+          ¿Como comenzo todo? <br/>
+          En Agosto de 2021 una personita entusiasta dentro del mundo del desarrollo, comenzo a enseñar
+          sobre tecnología y dessarrollo en blockchain mediante contenido audiovisual, sí esta personita es
+          nada mas ni nada menos que <a href=''>@martriay</a>, a ese genial acontecimiento
+          lo siguio el armado de nuestro <a href='https://discord.gg/eegRCDmwbM'>Servidor de discord</a>, donde habita hoy nuestra gran comunidad.
+          ¿Queres formar parte de nuestra comunidad? <br/>
+          Son bienvenidxs quienes busquen aprender sobre desarrollo y seguridad en web3, tanto como quienes
+          tengan conocimientos y quieran aportar, somos una comunidad disruptiva, sin esquemas, con ganas de que
+          el aprender no sea algo aburrido ni solitario, dentro de nuestra comunidad encontrás diferentes personajes
+          como <a href=''></a>@AlanX, @Magnetto, @tqts, @0x4non, <a href=''></a>@P4 Troy, <a href=''></a> @bengalaQ, @AgusDuha, @mmolinari.eth, y la leyenda de
+          la seguridad y auditoria en blockchain <a href=''>@tnch</a> entre muuuchisimos otrxs cracks, estas listx para conocerlxs? 
+          Sumate a nuesto Discord 🚀
         </p>
 
         <div className={styles.wrapperButton}>
