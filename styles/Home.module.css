@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Roboto+Condensed:ital,wght@1,300;1,400&display=swap');
 .container {
   padding: 0 2rem;
 }
@@ -29,14 +30,15 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #024188;
   text-decoration: none;
 }
 
 .title a:hover,
 .title a:focus,
 .title a:active {
-  text-decoration: underline;
+  color:#0070f3;
+  text-decoration: none;
 }
 
 .title {
@@ -132,6 +134,12 @@
   background-color: #7289da;
   border: 2px solid #7289da;
   color: #fff;
+}
+
+.redes {
+  margin-top: 5%;
+  display: flex;
+  gap: 21px;
 }
 
 @media (max-width: 600px) {
