@@ -172,7 +172,7 @@ export default function Home() {
           </a>
         </div>
 
-        <UwuImage width={90} height={75} className="mx-10" />
+        <UwuImage width={90} height={75} />
 
         <div className={styles.wrapperButton}>
           <a href="https://discord.gg/eegRCDmwbM">
