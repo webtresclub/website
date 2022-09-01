@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&family=Roboto+Condensed:ital,wght@1,300;1,400&display=swap');
 .container {
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .code {
@@ -137,7 +137,7 @@
 }
 
 .redes {
-  margin-top: 5%;
+  /* margin-top: 5%; */
   display: flex;
   gap: 21px;
 }
