@@ -28,7 +28,7 @@ export default function Home() {
       <Head>
         <title>WebtrES</title>
         <meta name="description" content="Sitio Web de la comunidad WebtrES" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.gif" type="image/gif" />
       </Head>
       <Header />
       <main className="flex flex-col align-center justify-center container mx-auto px-10 md:px-0">
