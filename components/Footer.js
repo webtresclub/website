@@ -14,6 +14,7 @@ const COLABORATORS = [
   { nickname: '@LautiRad', link: 'https://lautirad.vercel.app/' },
   { nickname: '@julian.eth', link: 'https://www.linkedin.com/in/julianperez64/' },
   { nickname: '@tomasfrancisco', link: 'https://www.tomasfreire.xyz/' },
+  { nickname: '@nicobevi.eth', link: 'https://github.com/nicobevilacqua' },
 ];
 
 export default function Footer() {
