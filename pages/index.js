@@ -41,21 +41,21 @@ export default function Home() {
 
         <p className={styles.description}>La comunidad más grande y diversa sobre Web3</p>
         <p className={styles.description}>
-          🔍¿Quienes somos?🔍
+          🔍¿Quiénes somos?🔍
           <br />
           Somos una comunidad hispanohablante apasionada por el desarrollo Web 3.0 integrada por
-          devs de diferentes ámbitos, todes contibuyendo a que el aprendizaje sea mas ameno y
+          devs de diferentes ámbitos, todes contibuyendo a que el aprendizaje sea más ameno y
           divertido en conjunto, dentro de nuestra comunidad encontrarás diferentes personajes
           divertidxs y extravagantes, cada unx con algo particular que lo distingue. 💙 <br />
-          📜¿Como comenzo todo?📜 <br />
+          📜¿Cómo comenzó todo?📜 <br />
           En Agosto de 2021 una personita entusiasta dentro del mundo del desarrollo, comenzo a
           enseñar sobre tecnología y desarrollo en blockchain mediante contenido audiovisual, sí,
           esta personita es nada mas ni nada menos que{' '}
           <a href="https://twitter.com/martriay">@martriay</a>, a ese genial acontecimiento lo
-          siguio el armado de nuestro{' '}
+          siguió el armado de nuestro{' '}
           <a href="https://discord.gg/eegRCDmwbM">Servidor de discord</a>, donde habita hoy nuestra
           gran comunidad. ✨<br />
-          👩‍💻¿Queres formar parte de nuestra comunidad?👨‍💻 <br />
+          👩‍💻¿Querés formar parte de nuestra comunidad?👨‍💻 <br />
           Son bienvenidxs quienes busquen aprender sobre desarrollo y seguridad en web3, tanto como
           quienes tengan conocimientos y quieran aportar, somos una comunidad disruptiva, sin
           esquemas, con ganas de que el aprender no sea algo aburrido ni solitario, dentro de
@@ -65,7 +65,7 @@ export default function Home() {
           <a href="https://twitter.com/MartinPefaur">@P4 Troy</a>,{' '}
           <a href="https://twitter.com/AugustitoQ">@bengalaQ</a>, @AgusDuha, @mmolinari.eth y la
           leyenda de la seguridad en blockchain <a href="https://twitter.com/tinchoabbate">@tnch</a>{' '}
-          entre muuuchisimos otrxs cracks, estas listx para conocer al resto de esta fantáscica
+          entre muuuchísimos otrxs cracks, estás listx para conocer al resto de esta fantástica
           banda? Sumate a nuesto Discord haciendo click en el siguiente botón. 🚀
         </p>
 
