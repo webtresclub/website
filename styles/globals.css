@@ -8,6 +8,7 @@
   --darkmode-position-left: 1px;
   --darkmode-color: #2e353f;
   --darkmode-border: 2px solid #2e353f;
+  --github-icon-fill: black; 
 }
 
 [data-theme='dark'] {
@@ -16,6 +17,7 @@
   --darkmode-position-left: 25.5px;
   --darkmode-color: #f7ee02;
   --darkmode-border: 2px solid white;
+  --github-icon-fill: white;
 }
 
 html,
@@ -38,4 +40,8 @@ a {
 .uwuloscopio {
   padding: 7px !important;
   margin-top: 7px !important;
+}
+
+.github-image {
+  fill: var(--github-icon-fill)
 }

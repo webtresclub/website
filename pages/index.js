@@ -65,7 +65,7 @@ export default function Home() {
           <a href="https://twitter.com/MartinPefaur">@P4 Troy</a>,{' '}
           <a href="https://twitter.com/AugustitoQ">@bengalaQ</a>, @AgusDuha, @mmolinari.eth y la
           leyenda de la seguridad en blockchain <a href="https://twitter.com/tinchoabbate">@tnch</a>{' '}
-          entre muuuchísimos otrxs cracks, estás listx para conocer al resto de esta fantástica
+          entre muuuchísimos otrxs cracks. Estás listx para conocer al resto de esta fantástica
           banda? Sumate a nuesto Discord haciendo click en el siguiente botón. 🚀
         </p>
 
