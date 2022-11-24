@@ -1,9 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import { useTheme } from 'next-themes';
 
 function SocialLink(props) {
-  const { link, name, image } = props;
+  let { link, name, image } = props;
+  const { theme } = useTheme();
+  if (theme === 'dark') {
+    image = `/darkmode${image}`;
+  }
   return (
     <a href={link} className="flex flex-row items-center">
       <Image className={`${name.toLowerCase()}`} src={image} alt={name} width={50} height={50} />
