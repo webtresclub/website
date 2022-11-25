@@ -22,6 +22,64 @@ function UwuImage(props) {
   );
 }
 
+function BoxLink(props) {
+  const { link, title, content } = props;
+  return (
+    <a
+      href={link}
+      className="border-2 rounded-md m-4 p-5 md:w-64 hover:border-blue-600 hover:text-blue-600 easy-out duration-150"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <h2 className="text-2xl mb-5">{title}</h2>
+      <p className="text-xl">{content}</p>
+    </a>
+  );
+}
+
+const contentLinks = [
+  {
+    title: 'Web de Martín Triay',
+    link: 'https://intro-ethereum.marto.lol/',
+    content: 'En su website vas a encontrar info para iniciar en Web3.',
+  },
+  {
+    title: 'Video 1 @matriay',
+    link: 'https://www.youtube.com/watch?v=zoJb3G8TQcE&list=PLA0EjXXZSf4fWVXHH__NgZC8lFiJP-8cT',
+    content: 'Introducción a Eth Development.',
+  },
+  {
+    title: 'Video 2 @matriay',
+    link: 'https://www.youtube.com/watch?v=i1IW9lK4mQw&list=PLA0EjXXZSf4fWVXHH__NgZC8lFiJP-8cT&index=2',
+    content: 'Continuación video 1.',
+  },
+  {
+    title: 'Video 3 @martriay',
+    link: 'https://www.youtube.com/watch?v=dnxfqmjNAtQ&t=5s',
+    content: 'Introducción a DeFi Development.',
+  },
+  {
+    title: 'Video 4 @martriay',
+    link: 'https://www.youtube.com/watch?v=H8sbS9V6gVY',
+    content: 'Continuación a video 3.',
+  },
+  {
+    title: 'Web de Martín Abbatemarco',
+    link: 'https://www.notonlyowner.com/learn/intro-seguridad-hacking-ethereum',
+    content: 'En su web vas a poder encontrar muchisima info sobre seguridad en Web3.',
+  },
+  {
+    title: 'Video 1 @tnch',
+    link: 'https://www.youtube.com/watch?v=sqjHodAj5Xc&t=582s',
+    content: 'Introducción a Seguridad en eth.',
+  },
+  {
+    title: 'Video 2 @tnch',
+    link: 'https://www.youtube.com/watch?v=CEzERbkVAhk',
+    content: 'Continuación a video 1.',
+  },
+];
+
 export default function Home() {
   return (
     <div className={`${styles.container} h-screen w-full`}>
@@ -40,34 +98,119 @@ export default function Home() {
         <UwuImage width="360" height="300" />
 
         <p className={styles.description}>La comunidad más grande y diversa sobre Web3</p>
-        <p className={styles.description}>
-          🔍¿Quiénes somos?🔍
-          <br />
-          Somos una comunidad hispanohablante apasionada por el desarrollo Web 3.0 integrada por
-          devs de diferentes ámbitos, todes contibuyendo a que el aprendizaje sea más ameno y
-          divertido en conjunto, dentro de nuestra comunidad encontrarás diferentes personajes
-          divertidxs y extravagantes, cada unx con algo particular que lo distingue. 💙 <br />
-          📜¿Cómo comenzó todo?📜 <br />
-          En Agosto de 2021 una personita entusiasta dentro del mundo del desarrollo, comenzo a
-          enseñar sobre tecnología y desarrollo en blockchain mediante contenido audiovisual, sí,
-          esta personita es nada mas ni nada menos que{' '}
-          <a href="https://twitter.com/martriay">@martriay</a>, a ese genial acontecimiento lo
-          siguió el armado de nuestro{' '}
-          <a href="https://discord.gg/eegRCDmwbM">Servidor de discord</a>, donde habita hoy nuestra
-          gran comunidad. ✨<br />
-          👩‍💻¿Querés formar parte de nuestra comunidad?👨‍💻 <br />
-          Son bienvenidxs quienes busquen aprender sobre desarrollo y seguridad en web3, tanto como
-          quienes tengan conocimientos y quieran aportar, somos una comunidad disruptiva, sin
-          esquemas, con ganas de que el aprender no sea algo aburrido ni solitario, dentro de
-          nuestra comunidad encontrás diferentes personajes como{' '}
-          <a href="https://twitter.com/alandooz">@AlanX</a>,{' '}
-          <a href="https://twitter.com/magnetto_eth">@Magnetto</a>, @tqts, @0x4non,{' '}
-          <a href="https://twitter.com/MartinPefaur">@P4 Troy</a>,{' '}
-          <a href="https://twitter.com/AugustitoQ">@bengalaQ</a>, @AgusDuha, @mmolinari.eth y la
-          leyenda de la seguridad en blockchain <a href="https://twitter.com/tinchoabbate">@tnch</a>{' '}
-          entre muuuchísimos otrxs cracks. Estás listx para conocer al resto de esta fantástica
-          banda? Sumate a nuesto Discord haciendo click en el siguiente botón. 🚀
-        </p>
+        <div className={`${styles.description} !mt-0`}>
+          <h2 className="mb-5 mt-10 text-3xl">🔍¿Quiénes somos?🔍</h2>
+          <p>
+            Somos una comunidad hispanohablante apasionada por el desarrollo Web 3.0 integrada por
+            devs de diferentes ámbitos, todes contibuyendo a que el aprendizaje sea más ameno y
+            divertido en conjunto, dentro de nuestra comunidad encontrarás diferentes personajes
+            divertidxs y extravagantes, cada unx con algo particular que lo distingue. 💙
+          </p>
+          <h2 className="mb-5 mt-10 text-3xl">📜¿Cómo comenzó todo?📜 </h2>
+          <p>
+            En Agosto de 2021,{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/martriay"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @martriay
+            </a>
+            , un entusiasta dentro del mundo del desarrollo, llevo a cabo una serie de directos en
+            Youtube/Twitch enseñando sobre tecnología y desarrollo en blockchain, como consecuencia
+            de esa serie de cursos se creó nuestro{' '}
+            <a
+              className="text-blue-500"
+              href="https://discord.gg/eegRCDmwbM"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Servidor de discord
+            </a>
+            , donde habita hoy nuestra gran comunidad. ✨
+          </p>
+          <h2 className="mb-5 mt-10 text-3xl">👩‍💻¿Querés formar parte de nuestra comunidad?👨‍💻 </h2>
+          <p>
+            Son bienvenidxs quienes busquen aprender sobre desarrollo y seguridad en web3, tanto
+            como quienes tengan conocimientos y quieran aportar, somos una comunidad disruptiva, sin
+            esquemas, con ganas de que el aprender no sea algo aburrido ni solitario, dentro de
+            nuestra comunidad encontrás diferentes personajes como{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/alandooz"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @AlanX
+            </a>
+            ,{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/magnetto_eth"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @Magnetto
+            </a>
+            ,{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/tqtsar"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @tqts
+            </a>
+            , @0x4non,{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/MartinPefaur"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @P4 Troy
+            </a>
+            ,{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/AugustitoQ"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @bengalaQ
+            </a>
+            ,{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/AgusDuha"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @AgusDuha
+            </a>
+            ,{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/mmolinari"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @mmolinari.eth
+            </a>{' '}
+            y la leyenda de la seguridad en blockchain{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/tinchoabbate"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @tnch
+            </a>{' '}
+            entre muuuchísimos otrxs cracks, estás listx para conocer al resto de esta fantástica
+            banda? Sumate a nuesto Discord haciendo click en el siguiente botón. 🚀
+          </p>
+        </div>
 
         <a href="https://discord.gg/eegRCDmwbM" className="mx-auto">
           <Image className="discord" src="/discord.png" alt="discord" width={150} height={150} />
@@ -78,98 +221,10 @@ export default function Home() {
           No te preocupes, acá abajo te dejamos unos links que te pueden ayudar 🥳 💫
         </p>
 
-        <div className={`${styles.grid} mx-auto`}>
-          <a
-            href="https://intro-ethereum.marto.lol/"
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h2>Web de Martín Triay</h2>
-            <p>En su website vas a encontrar info para iniciar en Web3.</p>
-          </a>
-
-          <a
-            href="https://www.youtube.com/watch?v=zoJb3G8TQcE&list=PLA0EjXXZSf4fWVXHH__NgZC8lFiJP-8cT"
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h2>Video 1 @matriay</h2>
-            <p>Introducción a Eth Development.</p>
-          </a>
-
-          <a
-            href="https://www.youtube.com/watch?v=i1IW9lK4mQw&list=PLA0EjXXZSf4fWVXHH__NgZC8lFiJP-8cT&index=2"
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h2>Video 2 @matriay</h2>
-            <p>Continuación video 1.</p>
-          </a>
-
-          <a
-            href="https://www.youtube.com/watch?v=dnxfqmjNAtQ&t=5s"
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h2>Video 3 @martriay</h2>
-            <p>
-              Introducción a <br />
-              DeFi Development.
-            </p>
-          </a>
-
-          <a
-            href="https://www.youtube.com/watch?v=H8sbS9V6gVY"
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h2>Video 4 @martriay</h2>
-            <p>
-              Continuación a <br />
-              video 3.
-            </p>
-          </a>
-
-          <a
-            href="https://www.notonlyowner.com/learn/intro-seguridad-hacking-ethereum"
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h2>Web de Martín Abbatemarco</h2>
-            <p>En su web vas a poder encontrar muchisima info sobre seguridad en Web3.</p>
-          </a>
-
-          <a
-            href="https://www.youtube.com/watch?v=sqjHodAj5Xc&t=582s"
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h2>Video 1 @tnch</h2>
-            <p>
-              Introducción a <br />
-              Seguridad en eth.
-            </p>
-          </a>
-
-          <a
-            href="https://www.youtube.com/watch?v=CEzERbkVAhk"
-            className={styles.card}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <h2>Video 2 @tnch</h2>
-            <p>
-              Continuación a <br />
-              video 1.
-            </p>
-          </a>
+        <div className="flex flex-row justify-center items-stretch flex-wrap w-full md:max-w-screen-md m-auto">
+          {contentLinks.map(({ title, link, content }, index) => (
+            <BoxLink title={title} content={content} link={link} key={index} />
+          ))}
         </div>
 
         <UwuImage width={90} height={75} />
