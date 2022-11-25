@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 function SocialLink(props) {
   let { link, name, image } = props;
   const { theme } = useTheme();
-  if (theme === 'dark') {
+  if (theme !== 'light') {
     image = `/darkmode${image}`;
   }
   return (

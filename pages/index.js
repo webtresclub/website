@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Head from 'next/head';
+import { useTheme } from 'next-themes';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,11 +10,12 @@ import Social from '../components/Social';
 
 function UwuImage(props) {
   const { width, height, className = '' } = props;
+  const { theme } = useTheme();
   return (
     <div className={`mx-auto ${className}`}>
       <Image
         className="uwuloscopio"
-        src="/UwUloscopio_big.gif"
+        src={theme !== 'light' ? '/darkmode/UwUloscopio_big.gif' : '/UwUloscopio_big.gif'}
         alt="UwUloscopio"
         width={width}
         height={height}
