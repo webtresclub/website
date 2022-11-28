@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
 import styles from '../styles/Darkmode.module.css';
-import Image from 'next/image';
+//import Image from 'next/image';
 // import sun from "../images/sun.png"
 // import moon from "../images/moon.png"
 
