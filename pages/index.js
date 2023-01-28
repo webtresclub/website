@@ -164,7 +164,16 @@ export default function Home() {
             >
               @tqts
             </a>
-            , @0x4non,{' '}
+            ,{' '}
+            <a
+              className="text-blue-500"
+              href="https://twitter.com/eugenioclrc"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @0x4non
+            </a>
+            ,{' '}
             <a
               className="text-blue-500"
               href="https://twitter.com/MartinPefaur"
