@@ -208,7 +208,7 @@ export default function Home() {
             ,{' '}
             <a
               className="text-blue-500"
-              href="https://twitter.com/mmolinari"
+              href="https://twitter.com/mateomolinari__"
               target="_blank"
               rel="noreferrer"
             >
