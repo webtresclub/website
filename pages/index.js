@@ -46,12 +46,12 @@ const contentLinks = [
     content: 'En su website vas a encontrar info para iniciar en Web3.',
   },
   {
-    title: 'Video 1 @matriay',
+    title: 'Video 1 @martriay',
     link: 'https://www.youtube.com/watch?v=zoJb3G8TQcE&list=PLA0EjXXZSf4fWVXHH__NgZC8lFiJP-8cT',
     content: 'Introducción a Eth Development.',
   },
   {
-    title: 'Video 2 @matriay',
+    title: 'Video 2 @martriay',
     link: 'https://www.youtube.com/watch?v=i1IW9lK4mQw&list=PLA0EjXXZSf4fWVXHH__NgZC8lFiJP-8cT&index=2',
     content: 'Continuación video 1.',
   },
