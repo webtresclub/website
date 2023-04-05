@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Head from 'next/head';
+import Link from 'next/link';
+
 import { useTheme } from 'next-themes';
 
 import Header from '../components/Header';
@@ -85,6 +87,11 @@ const contentLinks = [
     link: 'https://www.youtube.com/watch?v=CEzERbkVAhk',
     content: 'Continuación a video 1.',
   },
+  {
+    title: 'Timeline de logros',
+    link: '/halloffame',
+    content: 'Visita nuestra página de timeline para ver los logros de la comunidad.',
+  },
 ];
 
 export default function Home() {
@@ -136,6 +143,14 @@ export default function Home() {
               Servidor de discord
             </a>
             , donde habita hoy nuestra gran comunidad. ✨
+          </p>
+          <h2 className="mb-5 mt-10 text-3xl">🏆Hall of fame🏆</h2>
+          <p>
+            Recorre nuestra{' '}
+            <Link href="/halloffame">
+              <a className="text-blue-500 hover:underline">vitrina de trofeos</a>
+            </Link>
+            , donde encontrarás a los miembros más destacados de nuestra comunidad.
           </p>
           <h2 className="mb-5 mt-10 text-3xl">👩‍💻¿Querés formar parte de nuestra comunidad?👨‍💻 </h2>
           <p>
