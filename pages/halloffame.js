@@ -136,6 +136,21 @@ const achievements = [
     participants: ['https://twitter.com/MartinPefaur'],
     tweetUrl: 'https://twitter.com/Webowlatam/status/1565081114137460737',
   },
+  {
+    title: '#ETHDenver hackathon!',
+    date: '2023-03-02',
+    description: '🥉 Tercer puesto en #ETHDenver hackathon!.',
+    participants: ['https://twitter.com/nicobevi_eth'],
+    tweetUrl: 'https://twitter.com/reserveprotocol/status/1631423398357393408',
+  },
+
+  {
+    title: '##ETHDenver hackathon!',
+    date: '2023-03-02',
+    description: '🏅 Quinto puesto en #ETHDenver hackathon!.',
+    participants: ['https://twitter.com/eugenioclrc', 'https://twitter.com/rotcivegaf'],
+    tweetUrl: 'https://twitter.com/reserveprotocol/status/1631423403365404672',
+  },
 ];
 
 export default function HallOfFame() {
