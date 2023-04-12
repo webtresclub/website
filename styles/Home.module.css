@@ -37,7 +37,7 @@
 .title a:hover,
 .title a:focus,
 .title a:active {
-  color:#0070f3;
+  color: #0070f3;
   text-decoration: none;
 }
 
@@ -120,7 +120,7 @@
 
 .blueButton {
   display: inline-block;
-  font-family: Whitney, "Open Sans", Helvetica, sans-serif;
+  font-family: Whitney, 'Open Sans', Helvetica, sans-serif;
   font-weight: 400;
   font-size: 11pt;
   border-radius: 3px;
@@ -160,4 +160,9 @@
   .logo img {
     filter: invert(1);
   }
+}
+
+.timeline-card {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
 }
