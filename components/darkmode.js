@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import styles from '../styles/Darkmode.module.css';
 //import Image from 'next/image';
@@ -6,7 +6,16 @@ import styles from '../styles/Darkmode.module.css';
 // import moon from "../images/moon.png"
 
 const ThemeChanger = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div

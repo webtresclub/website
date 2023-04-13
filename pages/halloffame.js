@@ -10,17 +10,14 @@ import Social from '../components/Social';
 import TweetEmbed from '../components/TweetEmbed';
 
 function TimelineCard({ title, date, description, participants, tweetUrl }) {
-  const { theme } = useTheme();
-  const textColor = theme === 'dark' ? 'text-white' : 'text-black';
-
   return (
-    <div className={`timeline-card ${textColor} flex flex-row mb-10`}>
+    <div className={`timeline-card text-black dark:text-white flex flex-row mb-10`}>
       <div className="relative">
         <div className="border-r-2 border-blue-500 h-full mr-4"></div>
         <div className="absolute h-4 w-4 rounded-full bg-blue-500 -left-2 top-1/2 transform -translate-y-1/2"></div>
       </div>
       <div className="relative z-10">
-        <div className={`bg-${theme === 'dark' ? 'gray-900' : 'gray-100'} rounded-lg p-4 w-full`}>
+        <div className="bg-gray-100 dark:bg-gray-900 rounded-lg p-4 w-full">
           <h3 className="text-xl mb-2">
             {date} - {title}
           </h3>
