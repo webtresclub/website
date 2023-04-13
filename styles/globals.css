@@ -10,7 +10,7 @@
   --darkmode-border: 2px solid #2e353f;
 }
 
-[data-theme='dark'] {
+[class='dark'] {
   --background: white;
   --textColor: black;
   --darkmode-position-left: 25.5px;
