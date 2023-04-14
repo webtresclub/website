@@ -1,0 +1,26 @@
+/* FloatingDiscordButton.css */
+.floatingButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #7289da;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  outline: none;
+  z-index: 1000;
+}
+
+.floatingButton:hover {
+  background-color: #5865f2;
+}
+
+.floatingButton:active {
+  background-color: #4e62d9;
+}

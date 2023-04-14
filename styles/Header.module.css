@@ -1,0 +1,12 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar li {
+  padding: 0 10px;
+  margin: 0 5px;
+  border: var(--darkmode-border);
+  border-radius: 10px;
+}
