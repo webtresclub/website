@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Social from '../components/Social';
 import TweetEmbed from '../components/TweetEmbed';
+import FloatingDiscordButton from '../components/FloatingButton';
 
 function TimelineCard({ title, date, description, participants, tweetUrl }) {
   return (
@@ -160,7 +161,7 @@ export default function HallOfFame() {
       </Head>
       <Header />
       <main className="flex flex-col align-center justify-center container mx-auto px-10 md:px-0">
-        <h1 className={styles.title}>🏆Hall of Fame🏆</h1>
+        <h1 className={styles.title}>🏆Hall of Fame🏆</h1> <br />
         <div className="flex flex-col items-start">
           {achievements
             .sort(sortAchievementsByDate)
@@ -178,6 +179,7 @@ export default function HallOfFame() {
         <Social />
       </main>
       <Footer />
+      <FloatingDiscordButton />
     </div>
   );
 }
