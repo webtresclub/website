@@ -11,7 +11,7 @@ import TweetEmbed from '../components/TweetEmbed';
 
 function TimelineCard({ title, date, description, participants, tweetUrl }) {
   return (
-    <div className={`timeline-card text-black dark:text-white flex flex-row mb-10`}>
+    <div className={`mx-auto timeline-card text-black dark:text-white flex flex-row mb-10`}>
       <div className="relative">
         <div className="border-r-2 border-blue-500 h-full mr-4"></div>
         <div className="absolute h-4 w-4 rounded-full bg-blue-500 -left-2 top-1/2 transform -translate-y-1/2"></div>
