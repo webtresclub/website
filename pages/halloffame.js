@@ -12,19 +12,23 @@ import FloatingDiscordButton from '../components/FloatingButton';
 
 function TimelineCard({ title, date, description, participants, tweetUrl }) {
   return (
-    <div className={`mx-auto timeline-card text-black dark:text-white flex flex-row mb-10`}>
+    <div
+      className={`${styles.timelineCard} mx-auto text-black dark:text-white flex flex-row mb-10 w-full max-w-2xl`}
+    >
       <div className="relative">
         <div className="border-r-2 border-blue-500 h-full mr-4"></div>
         <div className="absolute h-4 w-4 rounded-full bg-blue-500 -left-2 top-1/2 transform -translate-y-1/2"></div>
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
         <div className="bg-gray-100 dark:bg-gray-900 rounded-lg p-4 w-full">
           <h3 className="text-xl mb-2">
-            {date} - {title}
+            {date} -{' '}
+            <a className="text-blue-500 hover:text-blue-700" href={tweetUrl}>
+              {title}
+            </a>
           </h3>
           <p>{description}</p>
           {participants && <Participants participants={participants} />}
-          {tweetUrl && <TweetEmbed tweetUrl={tweetUrl} />}
         </div>
       </div>
     </div>
@@ -73,7 +77,7 @@ const achievements = [
     tweetUrl: 'https://twitter.com/DeFi_Wonderland/status/1558453144387985410?s=20', // Ejemplo de enlace de tweet
   },
   {
-    title: 'Scaling @ethereum Hackathon by @ETHGlobal',
+    title: 'Scaling Ethereum Hackathon by @ETHGlobal',
     date: '2023-04-03',
     description: '🏅 Great xApp Winner ($500).',
     participants: ['https://twitter.com/chiin_eth'],
@@ -179,7 +183,7 @@ export default function HallOfFame() {
         <Social />
       </main>
       <Footer />
-      <FloatingDiscordButton />
+      <FloatingDiscordButton></FloatingDiscordButton>
     </div>
   );
 }

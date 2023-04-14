@@ -6,8 +6,12 @@
   --position-left: 26px;
 } */
 
+.container {
+  display: flex;
+}
+
 #toggleContainer {
-  background: #BFCEDA;
+  background: #bfceda;
   position: relative;
   /* left: 25%; */
   height: 25px;
