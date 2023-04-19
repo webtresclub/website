@@ -153,14 +153,14 @@ const achievements = [
     participants: ['https://twitter.com/eugenioclrc', 'https://twitter.com/rotcivegaf'],
     tweetUrl: 'https://twitter.com/reserveprotocol/status/1631423403365404672',
   },
-   {
+  {
     title: 'SolidityScan #FindTheBug',
     date: '2023-03-14',
     description: '🥇 Primer puesto en el 1er #FindTheBug.',
     participants: ['https://twitter.com/devnet0x'],
     tweetUrl: 'https://twitter.com/SolidityScan/status/1635623487313264641',
   },
-    {
+  {
     title: 'SolidityScan #FindTheBug',
     date: '2023-03-17',
     description: '🥈 Segundo puesto en el 2do #FindTheBug.',
@@ -169,10 +169,10 @@ const achievements = [
   },
   {
     title: '#ETHPorto hackathon!.',
-    date: '2023-03-18,
+    date: '2023-03-18',
     description: '🥉 Tercer puesto en #ETHPorto hackathon!.',
     participants: ['https://twitter.com/Deivitto', 'https://twitter.com/Cryptonicle1'],
-    tweetUrl: 'https://twitter.com/eth_porto/status/1637157159682097152'
+    tweetUrl: 'https://twitter.com/eth_porto/status/1637157159682097152',
   },
 ];
 
