@@ -79,7 +79,7 @@ const achievements = [
   {
     title: 'Scaling Ethereum Hackathon by @ETHGlobal',
     date: '2023-04-03',
-    description: '🏅 Great xApp Winner ($500).',
+    description: '🏅 Great xApp Winner',
     participants: ['https://twitter.com/chiin_eth'],
     tweetUrl: 'https://twitter.com/ConnextNetwork/status/1642889253913763841',
   },
@@ -147,7 +147,7 @@ const achievements = [
   },
 
   {
-    title: '##ETHDenver hackathon!',
+    title: '#ETHDenver hackathon!',
     date: '2023-03-02',
     description: '🏅 Quinto puesto en #ETHDenver hackathon!.',
     participants: ['https://twitter.com/eugenioclrc', 'https://twitter.com/rotcivegaf'],
@@ -166,6 +166,13 @@ const achievements = [
     description: '🥈 Segundo puesto en el 2do #FindTheBug.',
     participants: ['https://twitter.com/devnet0x'],
     tweetUrl: 'https://twitter.com/SolidityScan/status/1636599244634345472',
+  },
+  {
+    title: '#ETHPorto hackathon!.',
+    date: '2023-03-18,
+    description: '🥉 Tercer puesto en #ETHPorto hackathon!.',
+    participants: ['https://twitter.com/Deivitto', 'https://twitter.com/Cryptonicle1'],
+    tweetUrl: 'https://twitter.com/eth_porto/status/1637157159682097152'
   },
 ];
 
