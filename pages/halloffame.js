@@ -178,7 +178,7 @@ const achievements = [
     title: 'Hackathon #KingOfDevs.',
     date: '2023-04-23',
     description: '🥇 Primer puesto en hackathon #KingOfDevs.',
-    participants: ['https://twitter.com/eugenioclrc', 'https://twitter.com/nicobevi_eth'],
+    participants: ['https://twitter.com/eugenioclrc', 'https://twitter.com/nicobevi_eth', 'https://twitter.com/rotcivegaf'],
     tweetUrl: 'https://twitter.com/thinkanddev/status/1650271127493550080',
   },
 ];
