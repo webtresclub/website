@@ -174,6 +174,13 @@ const achievements = [
     participants: ['https://twitter.com/Deivitto', 'https://twitter.com/Cryptonicle1'],
     tweetUrl: 'https://twitter.com/eth_porto/status/1637157159682097152',
   },
+  {
+    title: 'Hackathon #KingOfDevs.',
+    date: '2023-04-23',
+    description: '🥇 Primer puesto en hackathon #KingOfDevs.',
+    participants: ['https://twitter.com/eugenioclrc', 'https://twitter.com/nicobevi_eth'],
+    tweetUrl: 'https://twitter.com/thinkanddev/status/1650271127493550080',
+  },
 ];
 
 export default function HallOfFame() {
