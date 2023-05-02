@@ -107,7 +107,7 @@ const achievements = [
   },
   {
     title: 'Code4rena @CantoNamespace competition!',
-    date: '2023-02-08',
+    date: '2023-04-21',
     description: '🥈 segundo puesto en competencia de auditoria de contratos inteligentes.',
     participants: ['https://twitter.com/adrianromero'],
     tweetUrl: 'https://twitter.com/code4rena/status/1649279929534775296',
