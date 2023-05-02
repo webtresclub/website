@@ -106,7 +106,14 @@ const achievements = [
     tweetUrl: 'https://twitter.com/code4rena/status/1638618032259076096?s=20',
   },
   {
-    title: 'Code4rena @wenwincom competition!',
+    title: 'Code4rena @CantoNamespace competition!',
+    date: '2023-04-21',
+    description: '🥈 segundo puesto en competencia de auditoria de contratos inteligentes.',
+    participants: ['https://twitter.com/adrianromero'],
+    tweetUrl: 'https://twitter.com/code4rena/status/1649279929534775296',
+  },
+  {
+    title: 'Code4rena @OndoFinance competition!',
     date: '2023-02-08',
     description: '🏅 Cuarto puesto en competencia de auditoria de contratos inteligentes.',
     participants: ['https://twitter.com/adrianromero'],
@@ -184,6 +191,13 @@ const achievements = [
       'https://twitter.com/rotcivegaf',
     ],
     tweetUrl: 'https://twitter.com/thinkanddev/status/1650271127493550080',
+  },
+  {
+    title: 'Code4rena 60-day leaderboard',
+    date: '2023-04-30',
+    description: '🥈 segundo puesto en competencia de auditoria de contratos inteligentes.',
+    participants: ['https://twitter.com/adrianromero'],
+    tweetUrl: 'https://twitter.com/code4rena/status/1652774944185683968',
   },
 ];
 
