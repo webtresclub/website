@@ -193,7 +193,7 @@ const achievements = [
     tweetUrl: 'https://twitter.com/thinkanddev/status/1650271127493550080',
   },
   {
-    title: 'Hackathon #KingOfDevs.',
+    title: 'Code4rena 60-day leaderboard',
     date: '2023-04-30',
     description: '🥈 segundo puesto en competencia de auditoria de contratos inteligentes.',
     participants: ['https://twitter.com/adrianromero'],
