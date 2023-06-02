@@ -199,6 +199,22 @@ const achievements = [
     participants: ['https://twitter.com/adrianromero'],
     tweetUrl: 'https://twitter.com/code4rena/status/1652774944185683968',
   },
+  {
+    title: 'Colaboración en repositorio Solady',
+    date: '2023-05-27',
+    description:
+      'Añadir función toInt256(uint256 x) Convierte un uint256 sin signo en un int256 con signo. Basado en la implementación de OZ en SafeCast.sol#L1131.',
+    participants: ['https://twitter.com/eugenioclrc'],
+    tweetUrl: 'https://github.com/Vectorized/solady/pull/436#event-9358898407',
+  },
+  {
+    title: '100 estrellas en repositorio multichain-auditor de 0xJuancito',
+    date: '2023-05-26',
+    description:
+      'Juancito llego a las 100 estrellas en su repo https://github.com/0xJuancito/multichain-auditor',
+    participants: ['https://twitter.com/0xJuancito'],
+    tweetUrl: 'https://twitter.com/0xJuancito/status/1662264278617927680',
+  },
 ];
 
 export default function HallOfFame() {
