@@ -215,6 +215,13 @@ const achievements = [
     participants: ['https://twitter.com/0xJuancito'],
     tweetUrl: 'https://twitter.com/0xJuancito/status/1662264278617927680',
   },
+  {
+    title: 'Bug en Solmate',
+    date: '2023-08-07',
+    description: 'magnetto encuentra y reporta un bug en la función SignedWadMath:wadMul de la librería Solmate',
+    participants: ['https://twitter.com/magnetto90'],
+    tweetUrl: 'https://twitter.com/transmissions11/status/1688601302371389440',
+  },
 ];
 
 export default function HallOfFame() {
