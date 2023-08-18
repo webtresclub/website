@@ -71,7 +71,7 @@ const achievements = [
       'https://twitter.com/0xJuancito',
       'https://twitter.com/eugenioclrc',
       'https://twitter.com/mateomolinari__',
-      'https://twitter.com/magnetto_eth',
+      'https://twitter.com/magnetto90',
       'https://twitter.com/rotcivegaf',
     ],
     tweetUrl: 'https://twitter.com/DeFi_Wonderland/status/1558453144387985410?s=20', // Ejemplo de enlace de tweet
@@ -218,7 +218,8 @@ const achievements = [
   {
     title: 'Bug en Solmate',
     date: '2023-08-07',
-    description: 'magnetto encuentra y reporta un bug en la función SignedWadMath:wadMul de la librería Solmate',
+    description:
+      'magnetto encuentra y reporta un bug en la función SignedWadMath:wadMul de la librería Solmate',
     participants: ['https://twitter.com/magnetto90'],
     tweetUrl: 'https://twitter.com/transmissions11/status/1688601302371389440',
   },
