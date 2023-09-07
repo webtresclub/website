@@ -223,6 +223,14 @@ const achievements = [
     participants: ['https://twitter.com/magnetto90'],
     tweetUrl: 'https://twitter.com/transmissions11/status/1688601302371389440',
   },
+  {
+    title: '🥈 Lens Protocol Competitive Audit',
+    date: '2023-09-06',
+    description:
+      '🥈 segundo puesto en competencia de auditoria de contratos inteligentes.',
+    participants: ['https://twitter.com/0xJuancito'],
+    tweetUrl: 'https://twitter.com/code4rena/status/1699549855310598540',
+  },
 ];
 
 export default function HallOfFame() {
