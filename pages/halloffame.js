@@ -16,12 +16,12 @@ function TimelineCard({ title, date, description, participants, tweetUrl }) {
       className={`${styles.timelineCard} mx-auto text-black dark:text-white flex flex-row mb-10 w-full max-w-2xl`}
     >
       <div className="relative">
-        <div className="border-r-2 border-blue-500 h-full mr-4"></div>
-        <div className="absolute h-4 w-4 rounded-full bg-blue-500 -left-2 top-1/2 transform -translate-y-1/2"></div>
+        <div className="h-full mr-4 border-r-2 border-blue-500"></div>
+        <div className="absolute w-4 h-4 transform -translate-y-1/2 bg-blue-500 rounded-full -left-2 top-1/2"></div>
       </div>
       <div className="relative z-10 w-full">
-        <div className="bg-gray-100 dark:bg-gray-900 rounded-lg p-4 w-full">
-          <h3 className="text-xl mb-2">
+        <div className="w-full p-4 bg-gray-100 rounded-lg dark:bg-gray-900">
+          <h3 className="mb-2 text-xl">
             {date} -{' '}
             <a className="text-blue-500 hover:text-blue-700" href={tweetUrl}>
               {title}
@@ -224,6 +224,30 @@ const achievements = [
     tweetUrl: 'https://twitter.com/transmissions11/status/1688601302371389440',
   },
   {
+    title: '🥇 Buildathon de Ethereum Argentina - Track: DEFI',
+    date: '2023-08-16',
+    description:
+      '🥇 primer puesto en Buildathon de Ethereum Argentina con NoirCash.',
+    participants: [
+    'https://twitter.com/eugeclrc',
+    'https://twitter.com/rotcivegaf',
+    'https://twitter.com/nicobevi_eth'],
+    tweetUrl: 'https://twitter.com/EtherArgentina/status/1696275501009035721',
+  },
+  {
+    title: '🥇 Buildathon de Ethereum Argentina - Track: Public Goods',
+    date: '2023-08-16',
+    description: '🥇 primer puesto en Buildathon de Ethereum Argentina con Veritrust Protocol.',
+    participants: [
+      'https://twitter.com/MartinPefaur',
+      'https://twitter.com/MageHernan',
+      'https://twitter.com/LuchoSca',
+      'https://twitter.com/TechRebelWorld',
+      'https://twitter.com/tomasdm_eth',
+      'https://twitter.com/tomasfrancizco'],
+    tweetUrl: 'https://twitter.com/EtherArgentina/status/1696275498760802514',
+  },
+  {
     title: '🥈 Lens Protocol Competitive Audit',
     date: '2023-09-06',
     description:
@@ -242,7 +266,7 @@ export default function HallOfFame() {
         <link rel="icon" href="favicon.gif" type="image/gif" />
       </Head>
       <Header />
-      <main className="flex flex-col align-center justify-center container mx-auto px-10 md:px-0">
+      <main className="container flex flex-col justify-center px-10 mx-auto align-center md:px-0">
         <h1 className={styles.title}>🏆Hall of Fame🏆</h1> <br />
         <div className="flex flex-col items-start">
           {achievements
