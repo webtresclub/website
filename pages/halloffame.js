@@ -243,7 +243,7 @@ const achievements = [
       'https://twitter.com/MageHernan',
       'https://twitter.com/LuchoSca',
       'https://twitter.com/TechRebelWorld',
-      'https://twitter.com/tomasdm_eth'
+      'https://twitter.com/tomasdm_eth',
       'https://twitter.com/tomasfrancizco'],
     tweetUrl: 'https://twitter.com/EtherArgentina/status/1696275498760802514',
   },
