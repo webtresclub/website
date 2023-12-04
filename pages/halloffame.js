@@ -95,7 +95,7 @@ const achievements = [
     title: 'Code4rena @AragonProject competition!',
     date: '2023-03-29',
     description: '🥇 Primer puesto en competencia de auditoria de contratos inteligentes.',
-    participants: ['https://twitter.com/adrianromero'],
+    participants: ['https://twitter.com/adrianromero', 'https://twitter.com/carlitox477'],
     tweetUrl: 'https://twitter.com/code4rena/status/1641197035025203201?s=20',
   },
   {
