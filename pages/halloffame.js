@@ -1,291 +1,242 @@
 import React from 'react';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import Head from 'next/head';
-import { useTheme } from 'next-themes';
+import Link from 'next/link';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Social from '../components/Social';
-import TweetEmbed from '../components/TweetEmbed';
-import FloatingDiscordButton from '../components/FloatingButton';
-
-function TimelineCard({ title, date, description, participants, tweetUrl }) {
-  return (
-    <div
-      className={`${styles.timelineCard} mx-auto text-black dark:text-white flex flex-row mb-10 w-full max-w-2xl`}
-    >
-      <div className="relative">
-        <div className="h-full mr-4 border-r-2 border-blue-500"></div>
-        <div className="absolute w-4 h-4 transform -translate-y-1/2 bg-blue-500 rounded-full -left-2 top-1/2"></div>
-      </div>
-      <div className="relative z-10 w-full">
-        <div className="w-full p-4 bg-gray-100 rounded-lg dark:bg-gray-900">
-          <h3 className="mb-2 text-xl">
-            {date} -{' '}
-            <a className="text-blue-500 hover:text-blue-700" href={tweetUrl}>
-              {title}
-            </a>
-          </h3>
-          <p>{description}</p>
-          {participants && <Participants participants={participants} />}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function sortAchievementsByDate(a, b) {
-  const dateA = new Date(a.date);
-  const dateB = new Date(b.date);
-  return dateB - dateA;
-}
-
-function Participants({ participants }) {
-  return (
-    <ul className="mt-2">
-      {participants.map((participant, index) => (
-        <li key={index}>
-          <a
-            href={participant}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700"
-          >
-            @{participant.split('/').pop()}
-          </a>
-        </li>
-      ))}
-    </ul>
-  );
+function formatDate(dateString) {
+  const [year, month, day] = dateString.split('-');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${months[parseInt(month) - 1]} ${day}, ${year}`;
 }
 
 const achievements = [
   {
-    title: 'CTF Defi Wonderland - Connext',
-    date: '2022-08-13',
-    description:
-      '🥇 Primer puesto en el CTF organizado por Defi Wonderland y Connext para la ETHLatam 2022.',
-    participants: [
-      'https://twitter.com/nicobevi_eth',
-      'https://twitter.com/0xJuancito',
-      'https://twitter.com/eugenioclrc',
-      'https://twitter.com/mateomolinari__',
-      'https://twitter.com/magnetto90',
-      'https://twitter.com/rotcivegaf',
-    ],
-    tweetUrl: 'https://twitter.com/DeFi_Wonderland/status/1558453144387985410?s=20', // Ejemplo de enlace de tweet
-  },
-  {
-    title: 'Scaling Ethereum Hackathon by @ETHGlobal',
-    date: '2023-04-03',
-    description: '🏅 Great xApp Winner',
-    participants: ['https://twitter.com/chiin_eth'],
-    tweetUrl: 'https://twitter.com/ConnextNetwork/status/1642889253913763841',
-  },
-  // Agrega más logros aquí
-  {
-    title: 'Code4rena @NeoTokyoCode competition!',
-    date: '2023-04-04',
-    description: '🥇 Primer puesto en competencia de auditoria de contratos inteligentes.',
-    participants: ['https://twitter.com/adrianromero'],
-    tweetUrl: 'https://twitter.com/code4rena/status/1643440655044341762?s=20',
-  },
-  {
-    title: 'Code4rena @AragonProject competition!',
-    date: '2023-03-29',
-    description: '🥇 Primer puesto en competencia de auditoria de contratos inteligentes.',
-    participants: ['https://twitter.com/adrianromero', 'https://twitter.com/carlitox477'],
-    tweetUrl: 'https://twitter.com/code4rena/status/1641197035025203201?s=20',
-  },
-  {
-    title: 'Code4rena @wenwincom competition!',
-    date: '2023-03-22',
-    description: '🏅 Cuarto puesto en competencia de auditoria de contratos inteligentes.',
-    participants: ['https://twitter.com/adrianromero'],
-    tweetUrl: 'https://twitter.com/code4rena/status/1638618032259076096?s=20',
-  },
-  {
-    title: 'Code4rena @CantoNamespace competition!',
-    date: '2023-04-21',
-    description: '🥈 segundo puesto en competencia de auditoria de contratos inteligentes.',
-    participants: ['https://twitter.com/adrianromero'],
-    tweetUrl: 'https://twitter.com/code4rena/status/1649279929534775296',
-  },
-  {
-    title: 'Code4rena @OndoFinance competition!',
-    date: '2023-02-08',
-    description: '🏅 Cuarto puesto en competencia de auditoria de contratos inteligentes.',
-    participants: ['https://twitter.com/adrianromero'],
-    tweetUrl: 'https://twitter.com/code4rena/status/1623391984827404288?s=20',
-  },
-  {
-    title: 'Secureum RACE-15',
-    date: '2023-02-27',
-    description:
-      '🥈 Segundo puesto en competencia Secureum RACE-15. Puestos 21 y 25 tambien para la comunidad 😊',
-    participants: [
-      'https://twitter.com/eugenioclrc',
-      'https://twitter.com/Cryptonicle1',
-      'https://twitter.com/adrianromero',
-    ],
-    tweetUrl: 'https://twitter.com/TheSecureum/status/1630164347585708032',
-  },
-  {
-    title: '@InfiniteHackETH',
-    date: '2022-10-09',
-    description: '🥇 Primer puesto en @InfiniteHackETH Hackathon.',
-    participants: ['https://twitter.com/gseba_lujan'],
-    tweetUrl: 'https://twitter.com/gseba_lujan/status/1579250179785359360',
-  },
-  {
-    title: '#WEBOWCHALLENGE',
-    date: '2022-08-31',
-    description: '🥇 Primer puesto en #WEBOWCHALLENGE.',
-    participants: ['https://twitter.com/MartinPefaur'],
-    tweetUrl: 'https://twitter.com/Webowlatam/status/1565081114137460737',
-  },
-  {
-    title: '#ETHDenver hackathon!',
-    date: '2023-03-02',
-    description: '🥉 Tercer puesto en #ETHDenver hackathon!.',
-    participants: ['https://twitter.com/nicobevi_eth'],
-    tweetUrl: 'https://twitter.com/reserveprotocol/status/1631423398357393408',
-  },
-
-  {
-    title: '#ETHDenver hackathon!',
-    date: '2023-03-02',
-    description: '🏅 Quinto puesto en #ETHDenver hackathon!.',
-    participants: ['https://twitter.com/eugenioclrc', 'https://twitter.com/rotcivegaf'],
-    tweetUrl: 'https://twitter.com/reserveprotocol/status/1631423403365404672',
-  },
-  {
-    title: 'SolidityScan #FindTheBug',
-    date: '2023-03-14',
-    description: '🥇 Primer puesto en el 1er #FindTheBug.',
-    participants: ['https://twitter.com/devnet0x'],
-    tweetUrl: 'https://twitter.com/SolidityScan/status/1635623487313264641',
-  },
-  {
-    title: 'SolidityScan #FindTheBug',
-    date: '2023-03-17',
-    description: '🥈 Segundo puesto en el 2do #FindTheBug.',
-    participants: ['https://twitter.com/devnet0x'],
-    tweetUrl: 'https://twitter.com/SolidityScan/status/1636599244634345472',
-  },
-  {
-    title: '#ETHPorto hackathon!.',
-    date: '2023-03-18',
-    description: '🥉 Tercer puesto en #ETHPorto hackathon!.',
-    participants: ['https://twitter.com/Deivitto', 'https://twitter.com/Cryptonicle1'],
-    tweetUrl: 'https://twitter.com/eth_porto/status/1637157159682097152',
-  },
-  {
-    title: 'Hackathon #KingOfDevs.',
-    date: '2023-04-23',
-    description: '🥇 Primer puesto en hackathon #KingOfDevs.',
-    participants: [
-      'https://twitter.com/eugenioclrc',
-      'https://twitter.com/nicobevi_eth',
-      'https://twitter.com/rotcivegaf',
-    ],
-    tweetUrl: 'https://twitter.com/thinkanddev/status/1650271127493550080',
-  },
-  {
-    title: 'Code4rena 60-day leaderboard',
-    date: '2023-04-30',
-    description: '🥈 segundo puesto en competencia de auditoria de contratos inteligentes.',
-    participants: ['https://twitter.com/adrianromero'],
-    tweetUrl: 'https://twitter.com/code4rena/status/1652774944185683968',
-  },
-  {
-    title: 'Colaboración en repositorio Solady',
-    date: '2023-05-27',
-    description:
-      'Añadir función toInt256(uint256 x) Convierte un uint256 sin signo en un int256 con signo. Basado en la implementación de OZ en SafeCast.sol#L1131.',
-    participants: ['https://twitter.com/eugenioclrc'],
-    tweetUrl: 'https://github.com/Vectorized/solady/pull/436#event-9358898407',
-  },
-  {
-    title: '100 estrellas en repositorio multichain-auditor de 0xJuancito',
-    date: '2023-05-26',
-    description:
-      'Juancito llego a las 100 estrellas en su repo https://github.com/0xJuancito/multichain-auditor',
-    participants: ['https://twitter.com/0xJuancito'],
-    tweetUrl: 'https://twitter.com/0xJuancito/status/1662264278617927680',
-  },
-  {
-    title: 'Bug en Solmate',
-    date: '2023-08-07',
-    description:
-      'magnetto encuentra y reporta un bug en la función SignedWadMath:wadMul de la librería Solmate',
-    participants: ['https://twitter.com/magnetto90'],
-    tweetUrl: 'https://twitter.com/transmissions11/status/1688601302371389440',
-  },
-  {
-    title: '🥇 Buildathon de Ethereum Argentina - Track: DEFI',
-    date: '2023-08-16',
-    description:
-      '🥇 primer puesto en Buildathon de Ethereum Argentina con NoirCash.',
-    participants: [
-    'https://twitter.com/eugeclrc',
-    'https://twitter.com/rotcivegaf',
-    'https://twitter.com/nicobevi_eth'],
-    tweetUrl: 'https://twitter.com/EtherArgentina/status/1696275501009035721',
-  },
-  {
-    title: '🥇 Buildathon de Ethereum Argentina - Track: Public Goods',
-    date: '2023-08-16',
-    description: '🥇 primer puesto en Buildathon de Ethereum Argentina con Veritrust Protocol.',
-    participants: [
-      'https://twitter.com/MartinPefaur',
-      'https://twitter.com/MageHernan',
-      'https://twitter.com/LuchoSca',
-      'https://twitter.com/TechRebelWorld',
-      'https://twitter.com/tomasdm_eth',
-      'https://twitter.com/tomasfrancizco'],
-    tweetUrl: 'https://twitter.com/EtherArgentina/status/1696275498760802514',
-  },
-  {
-    title: '🥈 Lens Protocol Competitive Audit',
     date: '2023-09-06',
-    description:
-      '🥈 segundo puesto en competencia de auditoria de contratos inteligentes.',
-    participants: ['https://twitter.com/0xJuancito'],
-    tweetUrl: 'https://twitter.com/code4rena/status/1699549855310598540',
+    title: '🥈 Lens Protocol Competitive Audit',
+    description: 'Segundo puesto en competencia de auditoria de contratos inteligentes.',
+    members: ['@0xJuancito'],
+    link: 'https://twitter.com/code4rena/status/1699549855310598540',
+  },
+  {
+    date: '2023-08-16',
+    title: '🥇 Buildathon de Ethereum Argentina - Track: DEFI',
+    description: 'Primer puesto en Buildathon de Ethereum Argentina con NoirCash.',
+    members: ['@eugeclrc', '@rotcivegaf', '@nicobevi_eth'],
+    link: 'https://twitter.com/EtherArgentina/status/1696275501009035721',
+  },
+  {
+    date: '2023-08-16',
+    title: '🥇 Buildathon de Ethereum Argentina - Track: Public Goods',
+    description: 'Primer puesto en Buildathon de Ethereum Argentina con Veritrust Protocol.',
+    members: ['@MartinPefaur', '@MageHernan', '@LuchoSca', '@TechRebelWorld', '@tomasdm_eth', '@tomasfrancizco'],
+    link: 'https://twitter.com/EtherArgentina/status/1696275498760802514',
+  },
+  {
+    date: '2023-08-07',
+    title: 'Bug en Solmate',
+    description: 'magnetto encuentra y reporta un bug en la función SignedWadMath:wadMul de la librería Solmate',
+    members: ['@magnetto90'],
+    link: 'https://twitter.com/transmissions11/status/1688601302371389440',
+  },
+  {
+    date: '2023-05-27',
+    title: 'Colaboración en repositorio Solady',
+    description: 'Añadir función toInt256(uint256 x) Convierte un uint256 sin signo en un int256 con signo.',
+    members: ['@eugenioclrc'],
+    link: 'https://github.com/Vectorized/solady/pull/436#event-9358898407',
+  },
+  {
+    date: '2023-05-26',
+    title: '100 estrellas en repositorio multichain-auditor',
+    description: 'Juancito llego a las 100 estrellas en su repo multichain-auditor',
+    members: ['@0xJuancito'],
+    link: 'https://twitter.com/0xJuancito/status/1662264278617927680',
+  },
+  {
+    date: '2023-04-30',
+    title: 'Code4rena 60-day leaderboard',
+    description: 'Segundo puesto en competencia de auditoria de contratos inteligentes.',
+    members: ['@adrianromero'],
+    link: 'https://twitter.com/code4rena/status/1652774944185683968',
+  },
+  {
+    date: '2023-04-23',
+    title: '🥇 Hackathon #KingOfDevs',
+    description: 'Primer puesto en hackathon #KingOfDevs.',
+    members: ['@eugenioclrc', '@nicobevi_eth', '@rotcivegaf'],
+    link: 'https://twitter.com/thinkanddev/status/1650271127493550080',
+  },
+  {
+    date: '2023-04-21',
+    title: '🥈 Code4rena @CantoNamespace competition',
+    description: 'Segundo puesto en competencia de auditoria de contratos inteligentes.',
+    members: ['@adrianromero'],
+    link: 'https://twitter.com/code4rena/status/1649279929534775296',
+  },
+  {
+    date: '2023-04-04',
+    title: '🥇 Code4rena @NeoTokyoCode competition',
+    description: 'Primer puesto en competencia de auditoria de contratos inteligentes.',
+    members: ['@adrianromero'],
+    link: 'https://twitter.com/code4rena/status/1643440655044341762',
+  },
+  {
+    date: '2023-04-03',
+    title: '🏅 Scaling Ethereum Hackathon - Great xApp Winner',
+    description: 'Great xApp Winner by @ETHGlobal',
+    members: ['@chiin_eth'],
+    link: 'https://twitter.com/ConnextNetwork/status/1642889253913763841',
+  },
+  {
+    date: '2023-03-29',
+    title: '🥇 Code4rena @AragonProject competition',
+    description: 'Primer puesto en competencia de auditoria de contratos inteligentes.',
+    members: ['@adrianromero', '@carlitox477'],
+    link: 'https://twitter.com/code4rena/status/1641197035025203201',
+  },
+  {
+    date: '2023-03-22',
+    title: '🏅 Code4rena @wenwincom competition',
+    description: 'Cuarto puesto en competencia de auditoria de contratos inteligentes.',
+    members: ['@adrianromero'],
+    link: 'https://twitter.com/code4rena/status/1638618032259076096',
+  },
+  {
+    date: '2023-03-18',
+    title: '🥉 #ETHPorto hackathon',
+    description: 'Tercer puesto en #ETHPorto hackathon.',
+    members: ['@Deivitto', '@Cryptonicle1'],
+    link: 'https://twitter.com/eth_porto/status/1637157159682097152',
+  },
+  {
+    date: '2023-03-17',
+    title: '🥈 SolidityScan #FindTheBug',
+    description: 'Segundo puesto en el 2do #FindTheBug.',
+    members: ['@devnet0x'],
+    link: 'https://twitter.com/SolidityScan/status/1636599244634345472',
+  },
+  {
+    date: '2023-03-14',
+    title: '🥇 SolidityScan #FindTheBug',
+    description: 'Primer puesto en el 1er #FindTheBug.',
+    members: ['@devnet0x'],
+    link: 'https://twitter.com/SolidityScan/status/1635623487313264641',
+  },
+  {
+    date: '2023-03-02',
+    title: '🥉 #ETHDenver hackathon',
+    description: 'Tercer puesto en #ETHDenver hackathon.',
+    members: ['@nicobevi_eth'],
+    link: 'https://twitter.com/reserveprotocol/status/1631423398357393408',
+  },
+  {
+    date: '2023-03-02',
+    title: '🏅 #ETHDenver hackathon',
+    description: 'Quinto puesto en #ETHDenver hackathon.',
+    members: ['@eugenioclrc', '@rotcivegaf'],
+    link: 'https://twitter.com/reserveprotocol/status/1631423403365404672',
+  },
+  {
+    date: '2023-02-27',
+    title: '🥈 Secureum RACE-15',
+    description: 'Segundo puesto en competencia Secureum RACE-15.',
+    members: ['@eugenioclrc', '@Cryptonicle1', '@adrianromero'],
+    link: 'https://twitter.com/TheSecureum/status/1630164347585708032',
+  },
+  {
+    date: '2023-02-08',
+    title: '🏅 Code4rena @OndoFinance competition',
+    description: 'Cuarto puesto en competencia de auditoria de contratos inteligentes.',
+    members: ['@adrianromero'],
+    link: 'https://twitter.com/code4rena/status/1623391984827404288',
+  },
+  {
+    date: '2022-10-09',
+    title: '🥇 @InfiniteHackETH',
+    description: 'Primer puesto en @InfiniteHackETH Hackathon.',
+    members: ['@gseba_lujan'],
+    link: 'https://twitter.com/gseba_lujan/status/1579250179785359360',
+  },
+  {
+    date: '2022-08-31',
+    title: '🥇 #WEBOWCHALLENGE',
+    description: 'Primer puesto en #WEBOWCHALLENGE.',
+    members: ['@MartinPefaur'],
+    link: 'https://twitter.com/Webowlatam/status/1565081114137460737',
+  },
+  {
+    date: '2022-08-13',
+    title: '🥇 CTF Defi Wonderland - Connext',
+    description: 'Primer puesto en el CTF organizado por Defi Wonderland y Connext para la ETHLatam 2022.',
+    members: ['@nicobevi_eth', '@0xJuancito', '@eugenioclrc', '@mateomolinari__', '@magnetto90', '@rotcivegaf'],
+    link: 'https://twitter.com/DeFi_Wonderland/status/1558453144387985410',
   },
 ];
 
 export default function HallOfFame() {
   return (
-    <div className={`${styles.container} h-screen w-full`}>
+    <>
       <Head>
         <title>🏆 Hall of Fame - WebtrES 🏆</title>
         <meta name="description" content="Hall of Fame de la comunidad WebtrES" />
         <link rel="icon" href="favicon.gif" type="image/gif" />
       </Head>
-      <Header />
-      <main className="container flex flex-col justify-center px-10 mx-auto align-center md:px-0">
-        <h1 className={styles.title}>🏆Hall of Fame🏆</h1> <br />
-        <div className="flex flex-col items-start">
-          {achievements
-            .sort(sortAchievementsByDate)
-            .map(({ title, date, description, tweetUrl, participants }, index) => (
-              <TimelineCard
-                key={index}
-                title={title}
-                date={date}
-                description={description}
-                tweetUrl={tweetUrl}
-                participants={participants}
-              />
+      <div className="min-h-screen bg-background text-primary font-mono p-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <Link href="/">
+              <a className="text-primary hover:text-primary/70 transition-colors">{'<'} back</a>
+            </Link>
+          </div>
+
+          <div className="border border-primary/30 p-6 mb-12">
+            <h1 className="text-2xl mb-2">🏆 Hall of Fame 🏆</h1>
+            <p className="text-muted-foreground text-sm">Community achievements and wins</p>
+          </div>
+
+          <div className="relative pl-32">
+            {/* Timeline line */}
+            <div className="absolute left-[107px] top-0 bottom-0 w-[2px] bg-primary/30" />
+
+            {achievements.map((achievement, index) => (
+              <div key={index} className="relative mb-12 last:mb-0">
+                <div className="absolute left-[-128px] flex items-center gap-2">
+                  <span className="text-muted-foreground text-sm w-24 text-right whitespace-nowrap">
+                    {formatDate(achievement.date)}
+                  </span>
+                  <div className="w-3 h-3 rounded-full border-2 border-primary bg-background flex-shrink-0" />
+                </div>
+
+                <div className="border border-primary/30 p-4 hover:border-primary/50 transition-colors ml-6">
+                  <h3 className="text-base mb-2">
+                    <a
+                      href={achievement.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary/70 transition-colors"
+                    >
+                      {achievement.title}
+                    </a>
+                  </h3>
+                  <p className="text-foreground/80 text-sm mb-3">{achievement.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {achievement.members.map((member, idx) => (
+                      <span key={idx} className="text-muted-foreground text-xs">
+                        {member}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center text-muted-foreground text-sm">
+            <Link href="/">
+              <a className="hover:text-primary transition-colors">return to home</a>
+            </Link>
+          </div>
         </div>
-        <Social />
-      </main>
-      <Footer />
-      <FloatingDiscordButton></FloatingDiscordButton>
-    </div>
+      </div>
+    </>
   );
 }
