@@ -10,6 +10,7 @@ export function History() {
     { name: '@bengalaQ', url: 'https://twitter.com/AugustitoQ' },
     { name: '@AgusDuha', url: 'https://twitter.com/AgusDuha' },
     { name: '@mmolinari.eth', url: 'https://twitter.com/mateomolinari__' },
+    { name: '@matta', url: 'https://twitter.com/mattaereal' },
     { name: '@tnch', url: 'https://twitter.com/tinchoabbate' },
   ];
 

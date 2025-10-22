@@ -2,7 +2,7 @@ export function FeaturedProjects() {
   const projects = [
     {
       title: 'Buttpluggy',
-      description: 'Primer proyecto NFT escrito en Huff',
+      description: 'Primera colección NFT escrita en Huff',
       url: 'https://buttpluggy.com/',
     },
   ];

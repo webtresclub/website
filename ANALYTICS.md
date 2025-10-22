@@ -170,3 +170,4 @@ Si necesitas agregar nuevas categorías o personalizar la detección, edita:
 - `lib/analytics.js` → función `autoTrackClick()`
 
 
+
