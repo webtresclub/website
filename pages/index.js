@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import { Hero } from '../components/Hero';
 import { History } from '../components/History';
+import { FeaturedProjects } from '../components/FeaturedProjects';
 import { HallOfFameSection } from '../components/HallOfFameSection';
 import { JoinCommunity } from '../components/JoinCommunity';
 import { Resources } from '../components/Resources';
@@ -22,6 +23,7 @@ export default function Home() {
         <History />
         <HallOfFameSection />
         <JoinCommunity />
+        <FeaturedProjects />
         <Resources />
         <FooterNew />
       </main>
