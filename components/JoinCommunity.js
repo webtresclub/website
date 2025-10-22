@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function JoinCommunity() {
   return (
-    <section className="py-6 px-4">
+    <section className="py-6 px-4" data-section="Join Community">
       <div className="container mx-auto max-w-3xl font-mono">
         <div className="space-y-4 border border-primary/30 p-8 bg-card/50">
           <div className="text-muted-foreground text-sm">$ cat miembros.txt</div>

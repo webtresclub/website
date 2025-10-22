@@ -50,7 +50,7 @@ export function Resources() {
   ];
 
   return (
-    <section className="py-6 px-4">
+    <section className="py-6 px-4" data-section="Resources">
       <div className="container mx-auto max-w-3xl font-mono">
         <div className="space-y-4 border border-primary/30 p-8 bg-card/50">
           <div className="text-muted-foreground text-sm">$ ls recursos/</div>
