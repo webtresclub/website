@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>WebtrES - Comunidad Web3</title>
-        <meta name="description" content="La comunidad más grande y diversa sobre Web3" />
+        <title>WebtrES Club - comunidad de blockchain hackers</title>
+        <meta name="description" content="Comunidad global e hispanohablante de desarrollo y seguridad Web3" />
         <link rel="icon" href="favicon.gif" type="image/gif" />
       </Head>
       <main className="min-h-screen">
