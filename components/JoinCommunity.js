@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export function JoinCommunity() {
   const members = [
+    { name: '@martriay', url: 'https://twitter.com/martriay' },
     { name: '@AlanX', url: 'https://twitter.com/alandooz' },
     { name: '@Magnetto', url: 'https://twitter.com/magnetto_eth' },
     { name: '@tqts', url: 'https://twitter.com/tqtsar' },
@@ -19,10 +20,10 @@ export function JoinCommunity() {
       <div className="container mx-auto max-w-3xl font-mono">
         <div className="space-y-4 border border-primary/30 p-8 bg-card/50">
           <div className="text-muted-foreground text-sm">$ cat miembros.txt</div>
-          <h2 className="text-2xl md:text-3xl font-bold text-primary">{'>'} Únete</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-primary">{'>'} Unite</h2>
           <div className="space-y-4">
             <p className="text-foreground leading-relaxed">
-              Aprende desarrollo y seguridad en Web3. Comunidad sin esquemas, con ganas de aprender juntos.
+              Aprendé desarrollo y seguridad en Web3. Comunidad abierta, flexible, y con ganas de compartir.
             </p>
             <p className="text-foreground leading-relaxed">
               Miembros destacados:{' '}

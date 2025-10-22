@@ -3,8 +3,8 @@ import Link from 'next/link';
 export function Resources() {
   const resources = [
     {
-      title: 'martriay.eth',
-      description: 'Intro a Ethereum dev',
+      title: 'Intro a Ethereum Development',
+      description: 'Índice de contenido',
       url: 'https://intro-ethereum.marto.lol/',
     },
     {
@@ -46,11 +46,6 @@ export function Resources() {
       title: 'Video @tnch 2',
       description: 'Seguridad eth pt.2',
       url: 'https://www.youtube.com/watch?v=CEzERbkVAhk',
-    },
-    {
-      title: 'Línea de Tiempo',
-      description: 'Logros de la comunidad',
-      url: '/halloffame',
     },
   ];
 

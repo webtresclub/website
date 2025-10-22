@@ -195,27 +195,25 @@ export default function HallOfFame() {
 
           <div className="relative pl-32">
             {/* Timeline line */}
-            <div className="absolute left-[107px] top-0 bottom-0 w-[2px] bg-primary/30" />
+            <div className="absolute left-[117px] top-0 bottom-0 w-[2px] bg-primary/30" />
 
             {achievements.map((achievement, index) => (
               <div key={index} className="relative mb-12 last:mb-0">
-                <div className="absolute left-[-128px] flex items-center gap-2">
+                <div className="absolute left-[-136px] top-1/2 -translate-y-1/2 flex items-center gap-6">
                   <span className="text-muted-foreground text-sm w-24 text-right whitespace-nowrap">
                     {formatDate(achievement.date)}
                   </span>
                   <div className="w-3 h-3 rounded-full border-2 border-primary bg-background flex-shrink-0" />
                 </div>
 
-                <div className="border border-primary/30 p-4 hover:border-primary/50 transition-colors ml-6">
-                  <h3 className="text-base mb-2">
-                    <a
-                      href={achievement.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary/70 transition-colors"
-                    >
-                      {achievement.title}
-                    </a>
+                <a
+                  href={achievement.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border border-primary/30 p-4 hover:border-primary/50 transition-colors ml-6"
+                >
+                  <h3 className="text-base mb-2 hover:text-primary/70 transition-colors">
+                    {achievement.title}
                   </h3>
                   <p className="text-foreground/80 text-sm mb-3">{achievement.description}</p>
                   <div className="flex flex-wrap gap-2">
@@ -225,7 +223,7 @@ export default function HallOfFame() {
                       </span>
                     ))}
                   </div>
-                </div>
+                </a>
               </div>
             ))}
           </div>

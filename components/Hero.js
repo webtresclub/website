@@ -17,7 +17,7 @@ export function Hero() {
           </p>
 
           <p className="text-foreground leading-relaxed text-center">
-            Comunidad hispanohablante de expertos y novatos contibuyendo a que el aprendizaje sea más ameno y divertido.
+            Comunidad global e hispanohablante de expertos y novatos contibuyendo a que el aprendizaje sea más ameno y divertido.
           </p>
 
           <div className="pt-4 flex justify-center">
