@@ -21,8 +21,8 @@ export default function Home() {
         <Header />
         <Hero />
         <History />
-        <HallOfFameSection />
         <JoinCommunity />
+        <HallOfFameSection />
         <FeaturedProjects />
         <Resources />
         <FooterNew />
