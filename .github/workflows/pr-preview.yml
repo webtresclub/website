@@ -22,7 +22,6 @@ jobs:
 
       - name: Detect package manager
         id: detect-package-manager
-        working-directory: ./website
         run: |
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
@@ -42,18 +41,14 @@ jobs:
         with:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          cache-dependency-path: website/yarn.lock
 
       - name: Install dependencies
-        working-directory: ./website
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build Next.js site
-        working-directory: ./website
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Export static site
-        working-directory: ./website
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
 
       - name: Install Surge
@@ -61,7 +56,6 @@ jobs:
 
       - name: Deploy to Surge
         id: deploy
-        working-directory: ./website
         run: |
           export SURGE_DOMAIN="pr-${{ github.event.pull_request.number }}-webtres.surge.sh"
           surge ./out $SURGE_DOMAIN --token ${{ secrets.SURGE_TOKEN }}
