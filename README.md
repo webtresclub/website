@@ -1,4 +1,4 @@
-<h1>webtress.club website</h1>
+<h1>WebtrES Club website</h1>
 
 Repositorio con el código del website https://webtres.club
 
