@@ -5,7 +5,7 @@ export function History() {
     <section className="py-6 px-4">
       <div className="container mx-auto max-w-3xl font-mono">
         <div className="space-y-4 border border-primary/30 p-8 bg-card/50">
-          <div className="text-muted-foreground text-sm">$ cat history.txt</div>
+          <div className="text-muted-foreground text-sm">$ cat historia.txt</div>
           <h2 className="text-2xl md:text-3xl font-bold text-primary">{'>'} Origen</h2>
           <p className="text-foreground leading-relaxed">
             Agosto 2021.{' '}

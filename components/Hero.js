@@ -13,20 +13,20 @@ export function Hero() {
           </div>
 
           <p className="text-lg md:text-xl text-foreground text-center">
-            {'>'} La comunidad más grande y diversa sobre Web3
+            {'>'} desarrollo y ciberseguridad de web3
           </p>
 
           <p className="text-foreground leading-relaxed text-center">
-            Comunidad hispanohablante de blockchain hackers. Devs de diferentes ámbitos aprendiendo juntos.
+            Comunidad hispanohablante de expertos y novatos contibuyendo a que el aprendizaje sea más ameno y divertido.
           </p>
 
           <div className="pt-4 flex justify-center">
             <a href="https://discord.gg/eegRCDmwbM" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
-                className="font-mono border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                className="font-mono border-primary text-primary hover:!bg-primary/20 hover:!text-primary bg-transparent"
               >
-                $ join discord
+                $ unirse a discord
               </Button>
             </a>
           </div>

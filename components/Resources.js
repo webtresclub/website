@@ -48,7 +48,7 @@ export function Resources() {
       url: 'https://www.youtube.com/watch?v=CEzERbkVAhk',
     },
     {
-      title: 'Timeline',
+      title: 'Línea de Tiempo',
       description: 'Logros de la comunidad',
       url: '/halloffame',
     },
@@ -58,7 +58,7 @@ export function Resources() {
     <section className="py-6 px-4">
       <div className="container mx-auto max-w-3xl font-mono">
         <div className="space-y-4 border border-primary/30 p-8 bg-card/50">
-          <div className="text-muted-foreground text-sm">$ ls resources/</div>
+          <div className="text-muted-foreground text-sm">$ ls recursos/</div>
           <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">{'>'} Recursos</h2>
 
           <div className="space-y-3">

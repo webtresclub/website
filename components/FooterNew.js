@@ -7,7 +7,7 @@ export function FooterNew() {
         <div className="space-y-6 text-center">
           <div className="space-y-2">
             <div className="text-2xl font-bold text-primary">WebtrES Club</div>
-            <div className="text-sm text-muted-foreground">$ blockchain hackers community</div>
+            <div className="text-sm text-muted-foreground">$ comunidad de blockchain hackers</div>
           </div>
 
           <div className="flex justify-center gap-6 text-sm">

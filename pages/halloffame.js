@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 function formatDate(dateString) {
   const [year, month, day] = dateString.split('-');
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return `${months[parseInt(month) - 1]} ${day}, ${year}`;
+  const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+  return `${day} ${months[parseInt(month) - 1]}, ${year}`;
 }
 
 const achievements = [
@@ -184,13 +184,13 @@ export default function HallOfFame() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <Link href="/">
-              <a className="text-primary hover:text-primary/70 transition-colors">{'<'} back</a>
+              <a className="text-primary hover:text-primary/70 transition-colors">{'<'} volver</a>
             </Link>
           </div>
 
           <div className="border border-primary/30 p-6 mb-12">
             <h1 className="text-2xl mb-2">🏆 Hall of Fame 🏆</h1>
-            <p className="text-muted-foreground text-sm">Community achievements and wins</p>
+            <p className="text-muted-foreground text-sm">Logros y victorias de la comunidad</p>
           </div>
 
           <div className="relative pl-32">
@@ -232,7 +232,7 @@ export default function HallOfFame() {
 
           <div className="mt-12 text-center text-muted-foreground text-sm">
             <Link href="/">
-              <a className="hover:text-primary transition-colors">return to home</a>
+              <a className="hover:text-primary transition-colors">volver al inicio</a>
             </Link>
           </div>
         </div>
