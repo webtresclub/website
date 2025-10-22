@@ -2,7 +2,9 @@
 
 This repository is configured to automatically deploy pull request previews to Surge.sh.
 
-## Setup Required
+## ⚠️ Setup Required
+
+**The PR preview workflow will fail until you add the Surge token!**
 
 To enable PR previews, you need to add a Surge token to your GitHub repository secrets:
 

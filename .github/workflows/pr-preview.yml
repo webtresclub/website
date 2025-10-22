@@ -54,6 +54,17 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
 
+      - name: Check Surge Token
+        run: |
+          if [ -z "${{ secrets.SURGE_TOKEN }}" ]; then
+            echo "::error::SURGE_TOKEN secret is not set!"
+            echo "Please add your Surge token to GitHub Secrets:"
+            echo "1. Run 'surge token' locally to get your token"
+            echo "2. Go to Settings > Secrets and variables > Actions"
+            echo "3. Create a new secret named SURGE_TOKEN"
+            exit 1
+          fi
+
       - name: Deploy to Surge
         id: deploy
         run: |
