@@ -2,37 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: white;
-  --textColor: black;
-  --darkmode-position-left: 1px;
-  --darkmode-color: #2e353f;
-  --darkmode-border: 2px solid #2e353f;
-}
+@layer base {
+  :root {
+    --background: 250 100% 98%;
+    --foreground: 0 0% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 145 32% 55%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 15%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 25 61% 65%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 27.325 75% 57.7%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 145 32% 55%;
+    --radius: 0.5rem;
+    
+    /* Dark mode toggle variables for light theme */
+    --darkmode-border: 1px solid hsl(145 32% 55%);
+    --darkmode-position-left: 0.5px;
+    --darkmode-color: hsl(145 32% 55%);
+  }
 
-[class='dark'] {
-  --background: white;
-  --textColor: black;
-  --darkmode-position-left: 25.5px;
-  --darkmode-color: #f7ee02;
-  --darkmode-border: 2px solid white;
-}
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 145 30% 70%;
+    --card: 0 0% 8%;
+    --card-foreground: 145 30% 70%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 145 30% 70%;
+    --primary: 145 40% 70%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 145 30% 70%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 145 20% 45%;
+    --accent: 145 40% 70%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 25 67% 50%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 145 10% 15%;
+    --input: 145 10% 15%;
+    --ring: 145 40% 70%;
+    
+    /* Dark mode toggle variables for dark theme */
+    --darkmode-border: 1px solid hsl(145 40% 70%);
+    --darkmode-position-left: 26px;
+    --darkmode-color: hsl(145 40% 70%);
+  }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+  * {
+    @apply border-border;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  body {
+    @apply bg-background text-foreground;
+  }
 
-* {
-  box-sizing: border-box;
+  /* Pixelated class for gif logo */
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
 }
 
 .uwuloscopio {

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import styles from '../styles/Darkmode.module.css';
-//import Image from 'next/image';
-// import sun from "../images/sun.png"
-// import moon from "../images/moon.png"
+import Image from 'next/image';
 
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
@@ -17,16 +15,35 @@ const ThemeChanger = () => {
     return null;
   }
 
+  const isDark = theme === 'dark';
+
   return (
     <div
-      id={styles.toggleContainer}
+      className={styles.toggleContainer}
       onClick={() => {
         setTheme(theme === 'light' ? 'dark' : 'light');
       }}
     >
-      <div id={styles.ball} className={styles.lightTheme}></div>
-      {/* <Image src={sun} className={styles.themeImg} id={styles.sun} alt="sun" />
-        <Image src={moon} className={styles.themeImg} id={styles.moon} alt="moon" /> */}
+      <Image 
+        src="/moon.png" 
+        className={styles.moon} 
+        alt="moon" 
+        width={16} 
+        height={16}
+      />
+      <Image 
+        src="/sun.png" 
+        className={styles.sun} 
+        alt="sun" 
+        width={16} 
+        height={16}
+      />
+      <div 
+        className={styles.ball}
+        style={{
+          left: isDark ? '3px' : '28px',
+        }}
+      ></div>
     </div>
   );
 };
