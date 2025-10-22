@@ -2,20 +2,20 @@ name: PR Preview Deployment
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - '**.js'
-      - '**.jsx'
-      - '**.json'
-      - '**.css'
-      - 'public/**'
-      - 'components/**'
-      - 'pages/**'
-      - 'styles/**'
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
 
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -43,82 +43,22 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
       - name: Install dependencies
+        if: github.event.action != 'closed'
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build Next.js site
+        if: github.event.action != 'closed'
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Export static site
+        if: github.event.action != 'closed'
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
 
-      - name: Install Surge
-        run: npm install -g surge
-
-      - name: Check Surge Token
-        run: |
-          if [ -z "${{ secrets.SURGE_TOKEN }}" ]; then
-            echo "::error::SURGE_TOKEN secret is not set!"
-            echo "Please add your Surge token to GitHub Secrets:"
-            echo "1. Run 'surge token' locally to get your token"
-            echo "2. Go to Settings > Secrets and variables > Actions"
-            echo "3. Create a new secret named SURGE_TOKEN"
-            exit 1
-          fi
-
-      - name: Deploy to Surge
-        id: deploy
-        run: |
-          export SURGE_DOMAIN="pr-${{ github.event.pull_request.number }}-webtres.surge.sh"
-          surge ./out $SURGE_DOMAIN --token ${{ secrets.SURGE_TOKEN }}
-          echo "url=https://$SURGE_DOMAIN" >> $GITHUB_OUTPUT
-        env:
-          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-
-      - name: Comment PR
-        uses: actions/github-script@v6
+      - name: Deploy PR Preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const url = '${{ steps.deploy.outputs.url }}';
-            const prNumber = context.issue.number;
-            
-            // Find existing comment
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: prNumber,
-            });
-            
-            const botComment = comments.find(comment => 
-              comment.user.type === 'Bot' && 
-              comment.body.includes('🚀 Preview Deployment')
-            );
-            
-            const body = `## 🚀 Preview Deployment
-            
-            Your preview deployment is ready!
-            
-            ✅ **Preview URL:** ${url}
-            
-            ---
-            
-            <sub>Updated for commit: ${context.sha.substring(0, 7)}</sub>`;
-            
-            if (botComment) {
-              // Update existing comment
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: botComment.id,
-                body: body
-              });
-            } else {
-              // Create new comment
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                body: body
-              });
-            }
+          source-dir: ./out
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
 
