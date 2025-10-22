@@ -24,6 +24,11 @@
     --input: 0 0% 88%;
     --ring: 145 32% 55%;
     --radius: 0.5rem;
+    
+    /* Dark mode toggle variables for light theme */
+    --darkmode-border: 1px solid hsl(145 32% 55%);
+    --darkmode-position-left: 0.5px;
+    --darkmode-color: hsl(145 32% 55%);
   }
 
   .dark {
@@ -46,6 +51,11 @@
     --border: 145 10% 15%;
     --input: 145 10% 15%;
     --ring: 145 40% 70%;
+    
+    /* Dark mode toggle variables for dark theme */
+    --darkmode-border: 1px solid hsl(145 40% 70%);
+    --darkmode-position-left: 26px;
+    --darkmode-color: hsl(145 40% 70%);
   }
 
   * {

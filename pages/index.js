@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Header from '../components/Header';
 import { Hero } from '../components/Hero';
 import { History } from '../components/History';
 import { HallOfFameSection } from '../components/HallOfFameSection';
@@ -16,6 +17,7 @@ export default function Home() {
         <link rel="icon" href="favicon.gif" type="image/gif" />
       </Head>
       <main className="min-h-screen">
+        <Header />
         <Hero />
         <History />
         <HallOfFameSection />

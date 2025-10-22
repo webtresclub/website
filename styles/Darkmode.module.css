@@ -1,52 +1,51 @@
-/* [data-theme='light'] {
-  --position-left: 0.5px;
-}
-
-[data-theme='dark'] {
-  --position-left: 26px;
-} */
-
-.container {
-  display: flex;
-}
-
-#toggleContainer {
+.toggleContainer {
   background: #bfceda;
   position: relative;
-  /* left: 25%; */
-  height: 25px;
-  width: 50px;
-  border-radius: 25px;
+  height: 28px;
+  width: 56px;
+  border-radius: 28px;
   cursor: pointer;
-  border: var(--darkmode-border);
+  border: 2px solid hsl(145 32% 55%);
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
 }
 
-#ball {
-  height: 19.5px;
-  width: 20px;
-  top: 0.75px;
+.ball {
+  height: 22px;
+  width: 22px;
   border-radius: 50%;
   position: absolute;
   border: 0px;
+  background: hsl(145 32% 55%);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.lightTheme {
-  left: var(--darkmode-position-left);
-  background: var(--darkmode-color);
-  transition: all 0.2s ease;
+.sun {
+  position: relative;
+  z-index: 1;
+  opacity: 0.8;
+  line-height: 0;
 }
 
-.themeImg {
-  height: 5px;
-  width: 5px;
-  position: absolute;
-  top: 3px;
+.moon {
+  position: relative;
+  z-index: 1;
+  opacity: 0.8;
+  line-height: 0;
 }
 
-.toggleContainer :nth-child(2) {
-  left: 27px;
+/* Dark theme adjustments */
+:global(.dark) .toggleContainer {
+  background: #2a3f3a;
+  border-color: hsl(145 40% 70%);
 }
 
-.toggleContainer :nth-child(3) {
-  left: 3.5px;
+:global(.dark) .ball {
+  background: hsl(145 40% 70%);
 }

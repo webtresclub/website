@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Header from '../components/Header';
 
 function formatDate(dateString) {
   const [year, month, day] = dateString.split('-');
@@ -180,6 +181,7 @@ export default function HallOfFame() {
         <meta name="description" content="Hall of Fame de la comunidad WebtrES" />
         <link rel="icon" href="favicon.gif" type="image/gif" />
       </Head>
+      <Header />
       <div className="min-h-screen bg-background text-primary font-mono p-6">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
