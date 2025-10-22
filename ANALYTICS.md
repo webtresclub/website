@@ -169,3 +169,4 @@ El sistema es **zero-maintenance** para nuevos links. Solo necesitas:
 Si necesitas agregar nuevas categorías o personalizar la detección, edita:
 - `lib/analytics.js` → función `autoTrackClick()`
 
+
