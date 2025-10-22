@@ -22,12 +22,13 @@ jobs:
 
       - name: Detect package manager
         id: detect-package-manager
+        working-directory: ./website
         run: |
-          if [ -f "${{ github.workspace }}/website/yarn.lock" ]; then
+          if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
             echo "runner=yarn" >> $GITHUB_OUTPUT
-          elif [ -f "${{ github.workspace }}/website/package.json" ]; then
+          elif [ -f "package-lock.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
             echo "command=ci" >> $GITHUB_OUTPUT
             echo "runner=npx --no-install" >> $GITHUB_OUTPUT
@@ -41,7 +42,7 @@ jobs:
         with:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          cache-dependency-path: website/package-lock.json
+          cache-dependency-path: website/yarn.lock
 
       - name: Install dependencies
         working-directory: ./website
