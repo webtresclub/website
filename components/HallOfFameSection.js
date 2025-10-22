@@ -200,7 +200,7 @@ export function HallOfFameSection() {
           </div>
 
           <div className="pt-4">
-            <Link href="/halloffame">
+            <Link href="/hall-of-fame">
               <a>
                 <Button
                   variant="outline"
