@@ -24,12 +24,9 @@ export function Hero() {
             <h1 className="text-4xl md:text-6xl font-bold text-primary">WebtrES Club</h1>
           </div>
 
-          <p className="text-lg md:text-xl text-foreground text-center">
-            {'>'} comunidad de web3 hackers
-          </p>
-
+          {/* <p className="text-lg md:text-xl text-foreground text-center"> */}
           <p className="text-foreground leading-relaxed text-center">
-            Comunidad global e hispanohablante desarrollo y ciberseguridad de blockchain.
+            {'>'} Comunidad global e hispanohablante de desarrollo y seguridad Web3
           </p>
 
           <div className="pt-4 flex justify-center">
