@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import styles from '../styles/Darkmode.module.css';
 import Image from 'next/image';
+import { trackThemeToggle } from '../lib/analytics';
 
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
@@ -17,12 +18,19 @@ const ThemeChanger = () => {
 
   const isDark = theme === 'dark';
 
+  const handleToggle = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    trackThemeToggle(newTheme);
+  };
+
   return (
     <div
       className={styles.toggleContainer}
-      onClick={() => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
-      }}
+      onClick={handleToggle}
+      role="button"
+      aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+      data-track-label={`Theme Toggle: ${isDark ? 'Light' : 'Dark'} Mode`}
     >
       <Image 
         src="/moon.png" 
@@ -41,7 +49,7 @@ const ThemeChanger = () => {
       <div 
         className={styles.ball}
         style={{
-          left: isDark ? '3px' : '28px',
+          left: isDark ? '3px' : '27px',
         }}
       ></div>
     </div>

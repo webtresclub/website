@@ -182,11 +182,11 @@ export default function HallOfFame() {
         <link rel="icon" href="favicon.gif" type="image/gif" />
       </Head>
       <Header />
-      <div className="min-h-screen bg-background text-primary font-mono p-6">
+      <div className="min-h-screen bg-background text-primary font-mono p-6" data-section="Hall of Fame Full">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <Link href="/">
-              <a className="text-primary hover:text-primary/70 transition-colors">{'<'} volver</a>
+              <a className="text-primary hover:text-primary/70 transition-colors" data-track-label="Back to Home">{'<'} volver</a>
             </Link>
           </div>
 
@@ -232,7 +232,7 @@ export default function HallOfFame() {
 
           <div className="mt-12 text-center text-muted-foreground text-sm">
             <Link href="/">
-              <a className="hover:text-primary transition-colors">volver al inicio</a>
+              <a className="hover:text-primary transition-colors" data-track-label="Back to Home (bottom)">volver al inicio</a>
             </Link>
           </div>
         </div>

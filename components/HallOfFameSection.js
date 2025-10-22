@@ -166,7 +166,7 @@ export function HallOfFameSection() {
   };
 
   return (
-    <section className="py-6 px-4">
+    <section className="py-6 px-4" data-section="Hall of Fame Preview">
       <div className="container mx-auto max-w-3xl font-mono">
         <div className="space-y-4 border border-primary/30 p-8 bg-card/50">
           <div className="text-muted-foreground text-sm">$ ls hall-of-fame/</div>
@@ -201,7 +201,7 @@ export function HallOfFameSection() {
 
           <div className="pt-4">
             <Link href="/hall-of-fame">
-              <a>
+              <a data-track-label="View All Achievements">
                 <Button
                   variant="outline"
                   className="font-mono border-primary text-primary hover:!bg-primary/20 hover:!text-primary bg-transparent"
