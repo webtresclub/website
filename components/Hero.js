@@ -25,11 +25,11 @@ export function Hero() {
           </div>
 
           <p className="text-lg md:text-xl text-foreground text-center">
-            {'>'} desarrollo y ciberseguridad de web3
+            {'>'} comunidad de web3 hackers
           </p>
 
           <p className="text-foreground leading-relaxed text-center">
-            Comunidad global e hispanohablante de expertos y novatos contibuyendo a que el aprendizaje sea más ameno y divertido.
+            Comunidad global e hispanohablante desarrollo y ciberseguridad de blockchain.
           </p>
 
           <div className="pt-4 flex justify-center">
